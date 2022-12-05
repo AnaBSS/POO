@@ -1,31 +1,23 @@
-package Aula14;
+package GestaoAlun;
 
 import java.time.LocalDate;
 
+
 public class Aluno {
-	private Long id = 0l;
-	private String ra = "";
-	private String nome = "";
-	private LocalDate nascimento = LocalDate.now();
+	private long id;
+	private LocalDate nascimento;
+	private String ra;
+	private String nome;
 	
-	public Long getId() {
+	// Getters e setters 
+	
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-	public String getRa() {
-		return ra;
-	}
-	public void setRa(String ra) {
-		this.ra = ra;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	public LocalDate getNascimento() {
 		return nascimento;
 	}
@@ -33,5 +25,31 @@ public class Aluno {
 		this.nascimento = nascimento;
 	}
 	
+	public String getRa() {
+		return ra;
+	}
+	public void setRa(String ra) {
+		this.ra = ra;
+	}
 	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	// Metodos
+	
+	public void exibir(){
+        System.out.println("------ Dados do Aluno ------");
+        System.out.println(toString());
+    }   
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + "\tID: " + getId() + "\t\tData de nascimento: " + getNascimento() +
+             "\nRA: " + getRa();
+            
+    }
 }
